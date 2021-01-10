@@ -21,26 +21,26 @@ The code should be written in Python and not use existing libraries other than t
 
     b) Use 5 fold cross-validation on the dataset. Using nested cross-validation find the optimum depth of the tree. **[2 marks]**
     
-    > You should be editing `iris-experiments.py` for the code containing the experiments and 1.md for the plots/results and their analysis.
+    > You should be editing `iris-experiments.py` for the code containing the experiments.
 
 3. 
     a) Show the usage of your decision tree for the [real estate price prediction regression](https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set) problem. **[1 mark]**
     
     b) Compare the performance of your model with the decision tree module from scikit learn. **[1 mark]**
     
-   > You should be editing `estate-experiments.py` for the code containing the experiments and 1.md for the plots/results and their analysis.
+   > You should be editing `estate-experiments.py` for the code containing the experiments.
     
 4. Create some fake data to do some experiments on the runtime complexity of your decision tree algorithm. Create a dataset with N samples and M binary features. Vary M and N to plot the time taken for: 1) learning the tree, 2) predicting for test data. How do these results compare with theoretical time complexity for decision tree creation and prediction. You should do the comparison for all the four cases of decision trees. **[2 marks]**	
 
-    >You should be editing `experiments.py` for the code containing the experiments and 1.md for the plots and their analysis. 
+    >You should be editing `experiments.py` for the code containing the experiments. 
 
 5. 
     a) Implement Adaboost on Decision Stump (depth -1 tree). You could use Decision Tree learnt in assignment #1 or sklearn decision tree and solve it for the case of real input and discrete output. Edit `ensemble/ADABoost.py` **[2 marks]**
 
-    b) Implement AdaBoostClassifier on Iris data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Using sepal width and petal width as the two features, plot the decision surfaces as done for Q1a) and compare the accuracy of AdaBoostClassifier using 3 estimators over decision stump. Include your code in `q5_ADABoost.py`. [EDIT: *We will be solving the problem in 2 class setting. The two classes are: virginica and not virginica.  **[2 marks]**
+    b) Implement AdaBoostClassifier on Iris data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Using sepal width and petal width as the two features, plot the decision surfaces as done for Q1a) and compare the accuracy of AdaBoostClassifier using 3 estimators over decision stump. Include your code in `q5_ADABoost.py`. [*We will be solving the problem in 2 class setting. The two classes are: virginica and not virginica.  **[2 marks]**
 
 6.
-    a) Implement Bagging(BaseModel, num_estimators): where base model is be DecisionTree (or sklearn decision tree) you have implemented. In a later assignment, you would have to implement the above over LinearRegression() also. Edit `ensemble/bagging.py`. Use `q6_Bagging.py` for testing.[EDIT: *We will be implementing only for DecisionTrees [2 marks*]]
+    a) Implement Bagging(BaseModel, num_estimators): where base model is be DecisionTree (or sklearn decision tree) you have implemented. In a later assignment, you would have to implement the above over LinearRegression() also. Edit `ensemble/bagging.py`. Use `q6_Bagging.py` for testing.[*We will be implementing only for DecisionTrees [2 marks*]]
 
     
 7. 
