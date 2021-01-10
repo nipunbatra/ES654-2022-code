@@ -51,4 +51,4 @@ The code should be written in Python and not use existing libraries other than t
 
 You can answer the subjectve questions (timing analysis, displaying plots) by creating `assignment_q<question-number>_subjective_answers.md`
 
-Doubts about the assignment may be clarified here: 
+Doubts about the assignment may be clarified here: https://iitgnacin-my.sharepoint.com/:w:/g/personal/nipun_batra_iitgn_ac_in/EZOsxJwGPFFLhJ-9XmPL0IEBEvpkVz935Bd-nblaVkEzOQ?e=MuXphv
