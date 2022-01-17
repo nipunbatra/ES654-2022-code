@@ -41,4 +41,4 @@ for cls in y.unique():
 
 
 
-##### AdaBoostClassifier on Iris data set using the entire data set with sepal width and petal width as the two features
+##### AdaBoostClassifier on Classification data set using the entire data set

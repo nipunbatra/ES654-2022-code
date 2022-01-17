@@ -6,6 +6,6 @@ from metrics import *
 
 np.random.seed(42)
 
-# Read IRIS data set
+# Read dataset
 # ...
 # 
