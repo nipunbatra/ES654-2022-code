@@ -1,4 +1,4 @@
-# Assignment -3 
+# Assignment -2
 1. Solve linear regression via gradient descent for ‘d’ dimensional input and N samples using individual parameter updates
 (theta_i's) in a non-vectorised setting.\
   Method should include: \
@@ -12,8 +12,7 @@
   
 2. Solve the above using gradient descent in vectorised form with all the same set of parameters. Edit `linearRegression/linearRegression.py (fit_vectorised())` [2 marks]
 
-3. Write a function to learn the regression coefficients using gradient descent. Instead of writing the formulae for computing gradients by yourself, you will use Autograd to automatically do that for you. All other parameters remain the same. 
-Autograd reference: https://github.com/HIPS/autograd. Edit `linearRegression/linearRegression.py (fit_autograd())` [1 mark]
+3. Write a function to learn the regression coefficients using gradient descent. Instead of writing the formulae for computing gradients by yourself, you will use JAX/Tensorflow/PyTorch to automatically do that for you. All other parameters remain the same. Edit `linearRegression/linearRegression.py (fit_autograd())` [1 mark]
 
 
 4. Write a function inspired by sklearn’s polynomial preprocessing: (https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html) your function should have: degree and include bias parameters only. For this assignment, assume that input is a 1-dimensional numpy array.  For example, if an input sample is  np.array([a, b]), the degree-2 polynomial features with "include_bias=True" are [1, a, b, a<sup>2</sup>, b<sup>2</sup>].Edit
@@ -33,17 +32,10 @@ linear regression using the polynomial of degree d. What can you conclude? Edit 
 the data set (size of x, and thus y). What can you conclude? Edit `q6_plot.py` [1 mark]
 
 
-7. For gradient descent (any of the above implementation) create the following three gifs of gradient descent updates.
-- the surface plot of RSS in 3D 
-- the line fit
-- the contour
+7. For gradient descent (any of the above implementation) create a gif/video of gradient descent updates showing how the line fit improves over the iterations.
 
-This needs to be done only for the case of 2 coefficients (theta_0 and theta_1). 
 The gifs need to show only the first 10 iterations. 
-Examples for first 2 gifs can be found at https://giphy.com/gifs/gradient-O9rcZVmRcEGqI.<br /> 
-![Example of 1&2 gifs](gif1.gif)<br />
-Example for last gif can be found at https://giphy.com/gifs/gradient-6QlTwkigqg4yk. <br />
-![Example of 3rd gif](gif2.gif)<br />
+
 You can create these gifs using any online services after you plot individual images for each gradient update.
 Alternatively you can also use the matplotlib.animation library. Edit`q7_plot.py` [3 marks]
 
@@ -55,4 +47,4 @@ Alternatively you can also use the matplotlib.animation library. Edit`q7_plot.py
 `q9_dataset.py` [1 mark]
 
 
-Query Doc: https://docs.google.com/document/d/1gq52RGvw3tMKJAiEfkXxGsrEEj-LF5YLX47ZBt--0MI/edit?usp=sharing
+Query Doc: https://docs.google.com/document/d/1IWm6OToj4wbVQtJU4nJDcU0YuxavZEiIM3PVage0J_g/edit?usp=sharing
