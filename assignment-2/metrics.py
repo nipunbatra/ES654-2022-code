@@ -1,8 +1,6 @@
-
 def accuracy(y_hat, y):
     """
     Function to calculate the accuracy
-
     Inputs:
     > y_hat: pd.Series of predictions
     > y: pd.Series of ground truth
@@ -21,7 +19,6 @@ def accuracy(y_hat, y):
 def precision(y_hat, y, cls):
     """
     Function to calculate the precision
-
     Inputs:
     > y_hat: pd.Series of predictions
     > y: pd.Series of ground truth
@@ -34,7 +31,6 @@ def precision(y_hat, y, cls):
 def recall(y_hat, y, cls):
     """
     Function to calculate the recall
-
     Inputs:
     > y_hat: pd.Series of predictions
     > y: pd.Series of ground truth
@@ -47,7 +43,6 @@ def recall(y_hat, y, cls):
 def rmse(y_hat, y):
     """
     Function to calculate the root-mean-squared-error(rmse)
-
     Inputs:
     > y_hat: pd.Series of predictions
     > y: pd.Series of ground truth
@@ -60,7 +55,6 @@ def rmse(y_hat, y):
 def mae(y_hat, y):
     """
     Function to calculate the mean-absolute-error(mae)
-
     Inputs:
     > y_hat: pd.Series of predictions
     > y: pd.Series of ground truth

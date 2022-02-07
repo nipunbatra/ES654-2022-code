@@ -1,22 +1,58 @@
-Q1 a) Implement Adaboost on Decision Stump (depth -1 tree). You could use Decision Tree learnt in assignment #1 or sklearn decision tree and solve it for the case of real input and discrete output. Edit `ensemble/ADABoost.py` [*EDIT: 2 marks*]
+# Assignment -3 
+1. Solve linear regression via gradient descent for ‘d’ dimensional input and N samples using individual parameter updates
+(theta_i's) in a non-vectorised setting.\
+  Method should include: \
+    a. learning rate, default: 0.01 \
+    b. number of iterations (default: 100) \
+    c. Learning rate function over time: \
+      (i) ‘Constant’: (default)learning rate does not change over time \
+      (ii) ‘Inverse’: learning rate is alpha/t where t is the iteration number \
+    d. Batch_size (setting it to 1 converts to SGD, setting to some number between 1 and N converts to mini-batch GD. 
+     Edit `linearRegression/linearRegression.py (fit_non_vectorised())` [3 marks]
+  
+2. Solve the above using gradient descent in vectorised form with all the same set of parameters. Edit `linearRegression/linearRegression.py (fit_vectorised())` [2 marks]
 
-Q1 b) Implement AdaBoostClassifier on Iris data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Using sepal width and petal width as the two features, plot the decision surfaces as done for Q1a) and compare the accuracy of AdaBoostClassifier using 3 estimators over decision stump. Include your code in `q1_ADABoost.py`. [EDIT: *We will be solving the problem in 2 class setting. The two classes are: virginica and not virginica.  [2 marks*]]
-
-Q2 a) Complete the LinearRegression class in `linearRegression/linearRegression.py` to implement linear regression with option of fit_intercept and method as normal equation.[*EDIT: 2 marks*]
-
-Q2 b) Timing for LinearRegression(). What is the time complexity of solving linear regression using normal equations? Vary the number of samples and number of features to verify if the theoretical complexity matches empirical evidence. You can include your code in `q2_linearRegression.py`.[*EDIT: 2 marks*]
-
-Q2 c) Implement LinearRegression() on RealEstate dataset (as done earlier in assignment 1). Use 5-fold cross-validation. Plot the learnt coefficients across the five folds and calculate the train and test MAE across each of the fold. Include code in `linear_regression_realestate.py`[*EDIT: 2 marks*]
-
-Q3 a) Implement Bagging(BaseModel, num_estimators): where base model is be DecisionTree (or sklearn decision tree) you have implemented. In a later assignment, you would have to implement the above over LinearRegression() also. Edit `ensemble/bagging.py`. Use `q3_Bagging.py` for testing.[EDIT: *We will be implementing only for DecisionTrees [2 marks*]]
-
-Q3 b) Reproduce slides 13 to 17 from ensemble learning lecture. This would involve running Bagging(DecisionTree(), 5) on the dataset shown in lecture slides (real input and discrete output).[[2 mark*]]
-
-Q4 a) Implement RandomForestClassifier() and RandomForestRegressor() classes in `tree/randomForest.py`. Use `q4_RandomForest.py` for testing.[*2 marks*]
-
-Q4 b) Generate the plots for Iris data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Using sepal width and petal width as the two features. Include you code in `random_forest_iris.py`[*2 marks*]
+3. Write a function to learn the regression coefficients using gradient descent. Instead of writing the formulae for computing gradients by yourself, you will use Autograd to automatically do that for you. All other parameters remain the same. 
+Autograd reference: https://github.com/HIPS/autograd. Edit `linearRegression/linearRegression.py (fit_autograd())` [1 mark]
 
 
-You can answer the subjectve questions (timing analysis, displaying plots) by editing `assignment_q<question-number>_subjective_answers.md`
+4. Write a function inspired by sklearn’s polynomial preprocessing: (https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html) your function should have: degree and include bias parameters only. For this assignment, assume that input is a 1-dimensional numpy array.  For example, if an input sample is  np.array([a, b]), the degree-2 polynomial features with "include_bias=True" are [1, a, b, a<sup>2</sup>, b<sup>2</sup>].Edit
+`preprocessing/polynomial_features` [1 mark]
 
-Doubts about the assignment may be clarified here: https://docs.google.com/document/d/1oA-N4g7fBNLDlD3fHR5fKdaoInqHOB9qc9dZGKLTFII/edit?usp=sharing
+5. Create a data set as follows: 
+```python
+x = np.array([i*np.pi/180 for i in range(60,300,4)]) 
+np.random.seed(10) #Setting seed for reproducibility 
+y = 4*x + 7 + np.random.normal(0,3,len(x)) 
+```
+Now, using your newly created function for polynomial feature generation above, plot magnitude of theta v/s degree when you fit
+linear regression using the polynomial of degree d. What can you conclude? Edit `q5_plot.py` [1 mark] 
+
+
+6. Now, use the above code and for degree = 1, 3, 5, 7, 9, plot magnitude of theta v/s degree for varying N, where N is the size of
+the data set (size of x, and thus y). What can you conclude? Edit `q6_plot.py` [1 mark]
+
+
+7. For gradient descent (any of the above implementation) create the following three gifs of gradient descent updates.
+- the surface plot of RSS in 3D 
+- the line fit
+- the contour
+
+This needs to be done only for the case of 2 coefficients (theta_0 and theta_1). 
+The gifs need to show only the first 10 iterations. 
+Examples for first 2 gifs can be found at https://giphy.com/gifs/gradient-O9rcZVmRcEGqI.<br /> 
+![Example of 1&2 gifs](gif1.gif)<br />
+Example for last gif can be found at https://giphy.com/gifs/gradient-6QlTwkigqg4yk. <br />
+![Example of 3rd gif](gif2.gif)<br />
+You can create these gifs using any online services after you plot individual images for each gradient update.
+Alternatively you can also use the matplotlib.animation library. Edit`q7_plot.py` [3 marks]
+
+
+8. Compare time required for gradient descent v/s normal and see if it matches theoretical numbers. Edit `q8_compare_time.py`
+[1 mark]
+
+9. Create a data set that suffers from multicollinearity and check if your gradient descent implementation works. Edit
+`q9_dataset.py` [1 mark]
+
+
+Query Doc: https://docs.google.com/document/d/1gq52RGvw3tMKJAiEfkXxGsrEEj-LF5YLX47ZBt--0MI/edit?usp=sharing
